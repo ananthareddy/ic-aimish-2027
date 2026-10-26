@@ -88,16 +88,61 @@
         </ul>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <h1>IC-AIMISH 2027</h1>
-        <p class="subtitle">International Conference on AI in Medical Imaging and Skin Health</p>
-        <p style="max-width: 700px; margin: 0 auto 30px auto; font-size: 1.1rem; opacity: 0.9;">
-            Advancing Dermatological Diagnostics through Deep Learning, Computer Vision, and Explainable Medical AI.
-        </p>
-        <a href="#cfp" class="btn btn-primary">Submit Paper</a>
-        <a href="#registration" class="btn btn-secondary">Register Now</a>
-    </section>
+    ```html
+<!-- Hero Section -->
+<section class="hero" id="home">
+    <h1>IC-AIMISH 2027</h1>
+
+    <p class="subtitle">
+        International Conference on AI in Medical Imaging and Skin Health
+    </p>
+
+    <p style="max-width: 700px; margin: 0 auto 30px auto; font-size: 1.1rem; opacity: 0.9;">
+        Advancing Dermatological Diagnostics through Deep Learning,
+        Computer Vision, and Explainable Medical AI.
+    </p>
+
+    <!-- Submit Paper Button -->
+    <a href="#" class="btn btn-primary"
+       onclick="showPaperMessage(event)">
+        Submit Paper
+    </a>
+
+    <!-- Register Now Button -->
+    <a href="#" class="btn btn-secondary"
+       onclick="showRegistrationMessage(event)">
+        Register Now
+    </a>
+</section>
+
+<!-- JavaScript Messages -->
+<script>
+    function showPaperMessage(event) {
+        event.preventDefault();
+
+        alert(
+            "📢 Paper Submission Portal Under Development\n\n" +
+            "We are currently working on integrating the Microsoft CMT " +
+            "(Conference Management Toolkit) to manage paper submissions " +
+            "and the peer-review process.\n\n" +
+            "The paper submission facility will be available soon.\n\n" +
+            "Thank you for your interest in IC-AIMISH 2027!"
+        );
+    }
+
+    function showRegistrationMessage(event) {
+        event.preventDefault();
+
+        alert(
+            "📢 Conference Registration Under Development\n\n" +
+            "We are currently developing the online registration system " +
+            "and integrating the secure payment gateway.\n\n" +
+            "Online registration and payment facilities will be available soon.\n\n" +
+            "Thank you for your patience and interest in IC-AIMISH 2027!"
+        );
+    }
+</script>
+```
 
     <!-- Countdown -->
     <div class="countdown-container">
