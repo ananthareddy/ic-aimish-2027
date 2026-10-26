@@ -88,7 +88,7 @@
         </ul>
     </nav>
 
-    ```html
+    
 <!-- Hero Section -->
 <section class="hero" id="home">
     <h1>IC-AIMISH 2027</h1>
@@ -102,47 +102,34 @@
         Computer Vision, and Explainable Medical AI.
     </p>
 
-    <!-- Submit Paper Button -->
-    <a href="#" class="btn btn-primary"
-       onclick="showPaperMessage(event)">
+    <button type="button" class="btn btn-primary"
+            id="submitPaperBtn">
         Submit Paper
-    </a>
+    </button>
 
-    <!-- Register Now Button -->
-    <a href="#" class="btn btn-secondary"
-       onclick="showRegistrationMessage(event)">
+    <button type="button" class="btn btn-secondary"
+            id="registerNowBtn">
         Register Now
-    </a>
+    </button>
 </section>
 
-<!-- JavaScript Messages -->
-<script>
-    function showPaperMessage(event) {
-        event.preventDefault();
+<!-- Notification Modal -->
+<div id="noticeModal" class="notice-modal">
+    <div class="notice-content">
+        <button type="button" class="notice-close"
+                id="closeNotice">&times;</button>
 
-        alert(
-            "📢 Paper Submission Portal Under Development\n\n" +
-            "We are currently working on integrating the Microsoft CMT " +
-            "(Conference Management Toolkit) to manage paper submissions " +
-            "and the peer-review process.\n\n" +
-            "The paper submission facility will be available soon.\n\n" +
-            "Thank you for your interest in IC-AIMISH 2027!"
-        );
-    }
+        <h2 id="noticeTitle">Coming Soon!</h2>
 
-    function showRegistrationMessage(event) {
-        event.preventDefault();
+        <p id="noticeMessage"></p>
 
-        alert(
-            "📢 Conference Registration Under Development\n\n" +
-            "We are currently developing the online registration system " +
-            "and integrating the secure payment gateway.\n\n" +
-            "Online registration and payment facilities will be available soon.\n\n" +
-            "Thank you for your patience and interest in IC-AIMISH 2027!"
-        );
-    }
-</script>
-```
+        <button type="button" class="btn btn-primary"
+                id="okNotice">
+            OK
+        </button>
+    </div>
+</div>
+
 
     <!-- Countdown -->
     <div class="countdown-container">
