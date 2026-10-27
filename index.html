@@ -89,29 +89,197 @@
     </nav>
 
     
+```html
 <!-- Hero Section -->
 <section class="hero" id="home">
+
     <h1>IC-AIMISH 2027</h1>
 
     <p class="subtitle">
         International Conference on AI in Medical Imaging and Skin Health
     </p>
 
-    <p style="max-width: 700px; margin: 0 auto 30px auto; font-size: 1.1rem; opacity: 0.9;">
+    <p class="hero-description">
         Advancing Dermatological Diagnostics through Deep Learning,
         Computer Vision, and Explainable Medical AI.
     </p>
 
-    <button type="button" class="btn btn-primary"
-            id="submitPaperBtn">
-        Submit Paper
-    </button>
+    <!-- Action Buttons -->
+    <div class="hero-buttons">
 
-    <button type="button" class="btn btn-secondary"
-            id="registerNowBtn">
-        Register Now
-    </button>
+        <button type="button"
+                class="btn btn-primary"
+                id="submitPaperBtn">
+            Submit Paper
+        </button>
+
+        <button type="button"
+                class="btn btn-secondary"
+                id="registerNowBtn">
+            Register Now
+        </button>
+
+    </div>
+
+    <!-- Paper Submission Status Message -->
+    <div id="approvalMessage"
+         class="status-message approval-message"
+         role="status"
+         aria-live="polite"
+         hidden>
+    </div>
+
+    <!-- Registration and Payment Status Message -->
+    <div id="registrationMessage"
+         class="status-message registration-message"
+         role="status"
+         aria-live="polite"
+         hidden>
+    </div>
+
 </section>
+
+<!-- Hero Section Styles -->
+<style>
+    .hero-description {
+        max-width: 700px;
+        margin: 0 auto 30px;
+        font-size: 1.1rem;
+        line-height: 1.7;
+        opacity: 0.9;
+    }
+
+    .hero-buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .status-message {
+        max-width: 700px;
+        margin: 25px auto 0;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: left;
+        font-size: 16px;
+        line-height: 1.7;
+        box-sizing: border-box;
+    }
+
+    .status-message[hidden] {
+        display: none !important;
+    }
+
+    .status-message strong {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 18px;
+    }
+
+    .approval-message {
+        background-color: #fff3cd;
+        color: #664d03;
+        border: 1px solid #ffecb5;
+    }
+
+    .registration-message {
+        background-color: #dbeafe;
+        color: #1e3a8a;
+        border: 1px solid #93c5fd;
+    }
+
+    @media (max-width: 600px) {
+        .hero-buttons {
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .hero-buttons .btn {
+            width: 100%;
+            max-width: 260px;
+        }
+
+        .status-message {
+            margin: 20px 15px 0;
+            padding: 16px;
+            font-size: 15px;
+        }
+    }
+</style>
+
+<!-- Hero Section JavaScript -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const submitPaperBtn = document.getElementById("submitPaperBtn");
+        const registerNowBtn = document.getElementById("registerNowBtn");
+
+        const approvalMessage = document.getElementById("approvalMessage");
+        const registrationMessage = document.getElementById("registrationMessage");
+
+        // Submit Paper Button
+        submitPaperBtn.addEventListener("click", function () {
+
+            // Hide the registration message
+            registrationMessage.hidden = true;
+
+            // Display the paper submission status
+            approvalMessage.innerHTML = `
+                <strong>📢 Paper Submission Portal — Coming Soon!</strong>
+
+                We are currently working on obtaining the necessary
+                approvals from the Conference Management Toolkit (CMT)
+                for IC-AIMISH 2027.
+
+                The paper submission portal will be activated once the
+                approval process is completed.
+
+                Please visit our website for further updates.
+                Thank you for your patience and support.
+            `;
+
+            approvalMessage.hidden = false;
+
+            approvalMessage.scrollIntoView({
+                behavior: "smooth",
+                block: "nearest"
+            });
+        });
+
+        // Register Now Button
+        registerNowBtn.addEventListener("click", function () {
+
+            // Hide the paper submission message
+            approvalMessage.hidden = true;
+
+            // Display the registration status
+            registrationMessage.innerHTML = `
+                <strong>💳 Conference Registration — Coming Soon!</strong>
+
+                We are currently working on activating the official
+                online payment gateway for IC-AIMISH 2027.
+
+                The registration and online payment facility will be
+                available once the necessary approvals and payment
+                gateway integration have been completed.
+
+                Please visit our website for further updates.
+
+                Thank you for your patience and support.
+            `;
+
+            registrationMessage.hidden = false;
+
+            registrationMessage.scrollIntoView({
+                behavior: "smooth",
+                block: "nearest"
+            });
+        });
+
+    });
+</script>
 
 <!-- Notification Modal -->
 <div id="noticeModal" class="notice-modal">
